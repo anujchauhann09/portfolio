@@ -7,6 +7,7 @@
     <title>Anuj Chauhan Portfolio</title>
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="output.css">
+    <script src="./matter.js" defer></script>
     <style>
         html,
         body {
@@ -20,19 +21,23 @@
             box-sizing: border-box;
             font-family: "Poppins", sans-serif;
         }
+
+        #wrapper-canvas {
+            max-width: 100%;
+        }
     </style>
 </head>
 
 <body class="bg-[#111] text-white">
     <section class="flex flex-col justify-between h-screen">
-        <header class="flex items-center justify-between w-full px-4 mx-auto mt-4 max-w-screen-xl">
+        <header class="z-10 pointer-events-none flex items-center justify-between w-full px-4 mx-auto mt-4 max-w-screen-xl">
             <!-- <img src="assets/images/name-logo-white.svg" alt="logo"> // svg image take time to load when requested -->
             <svg width="70" height="70" viewBox="0 0 406 368" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M314.516 203.174L314.516 349.104L162.117 208.727M314.516 203.174L282.653 203.26M314.516 203.174L337.498 203.26L380.617 170.782L314.516 170.782M162.117 208.727L117.661 170.634L157.117 170.782M162.117 208.727L65.1165 301.139L20.176 301.139L137.099 188.83M200.117 170.782L282.653 96.1739L282.653 170.782M200.117 170.782L282.653 170.782M200.117 170.782L157.117 170.782M282.653 203.26L210.462 202.796L282.653 270.76L282.653 203.26ZM282.653 170.782L314.516 170.782M157.117 170.782L315.751 20.1061L314.516 170.782"
                     stroke="currentColor" stroke-width="10" />
             </svg> <!-- optimized (no request go for the image) -->
-            <div class="flex gap-4">
+            <div class="flex gap-4 pointer-events-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-sun">
@@ -51,25 +56,30 @@
                     class="feather feather-moon hidden">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <a href="tel:8630087689">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-phone">
-                    <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                    </path>
-                </svg>
-                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp"
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://wa.link/q3ukky" target="_blank">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp"
                     class="svg-inline--fa fa-whatsapp fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" width="24"
                     height="24" viewBox="0 0 448 512">
-                    <path fill="currentColor"
-                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-                    </path>
-                </svg>
+                        <path fill="currentColor"
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+                        </path>
+                    </svg>
+                </a>
             </div>
         </header>
+        <div class="absolute inset-0 hidden md:block" id="wrapper-canvas"></div>
         <div class="flex -mt-10 relative">
             <div class="w-full px-4 mx-auto max-w-screen-xl">
-                <svg class="absolute top-0 left-1/2 -translate-y-1/4 -translate-x-1/2 md:w-[600px] h-auto sm:w-[400px] w-[300px]" width="406" height="368" viewBox="0 0 406 368" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="pointer-events-none absolute top-0 left-1/2 -translate-y-[80px] sm:-translate-y-1/4 -translate-x-1/2 md:w-[600px] h-auto sm:w-[400px] w-[300px]" width="406" height="368" viewBox="0 0 406 368" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M314.899 203.5L314.899 349.43L162.5 209.053M314.899 203.5L283.037 203.586M314.899 203.5L337.881 203.586L381 171.109L314.899 171.109M162.5 209.053L118.044 170.96L157.5 171.109M162.5 209.053L65.5 301.465L20.5595 301.465L137.482 189.156M200.5 171.109L283.037 96.5L283.037 171.109M200.5 171.109L283.037 171.109M200.5 171.109L157.5 171.109M283.037 203.586L210.846 203.123L283.037 271.086L283.037 203.586ZM283.037 171.109L314.899 171.109M157.5 171.109L316.135 20.4322L314.899 171.109" stroke="#1F2667" stroke-opacity="0.9" stroke-width="10"/>
                     <path d="M314.899 203.5L314.899 349.43L162.5 209.053M314.899 203.5L283.037 203.586M314.899 203.5L337.881 203.586L381 171.109L314.899 171.109M162.5 209.053L118.044 170.96L157.5 171.109M162.5 209.053L65.5 301.465L20.5595 301.465L137.482 189.156M200.5 171.109L283.037 96.5L283.037 171.109M200.5 171.109L283.037 171.109M200.5 171.109L157.5 171.109M283.037 203.586L210.846 203.123L283.037 271.086L283.037 203.586ZM283.037 171.109L314.899 171.109M157.5 171.109L316.135 20.4322L314.899 171.109" stroke="url(#paint0_linear)" stroke-width="10"/>
                     <defs>
@@ -80,9 +90,21 @@
                     </defs>
                 </svg>     
                 <div class="relative md:mt-8 mt-6 ml-4 md:ml-16">
-                    <h1 class="text-5xl md:text-[64px] mr-14">Anuj Chauhan</h1> 
-                    <p class="italic my-4 md:my-8">Aspiring Software Engineer</p>
-                    <button class="bg-[#4595eb] py-2 px-5 rounded font-bold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6]">About Me</button>
+                    <h1 class="text-5xl md:text-[64px] mr-14 pointer-events-none">Anuj Chauhan</h1> 
+                    <p class="italic my-4 md:my-8 pointer-events-none">Aspiring Software Engineer</p>
+                    <button class="bg-[#4595eb] relative py-2 px-5 hover:scale-110 ease-in-out duration-150 rounded font-bold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6]">About Me
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg class="absolute top-1/2 -translate-y-[30px] group-hover:-right-8 ease-in-out duration-150 -right-10" width="60px" height="60px" viewBox="0 0 24.000001 24.000001" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <filter id="a" color-interpolation-filters="sRGB" height="1.798065" width="1.31919" x="-.159595" y="-.399032">
+                            <feGaussianBlur stdDeviation="1.3302515" />
+                          </filter>
+                          <g transform="matrix(.90944794 0 0 .90944794 -259.0175 -817.2446)">
+                            <path d="m300.84375 908.875c-.35929.0633-.67275.33918-.78125.6875l-.625 1.8125h-10.4375c-.52358.00005-.99995.47642-1 1v1c.00005.52358.47642.99995 1 1h10.4375l.625 1.8125c.17584.53611.8642.83335 1.375.59375l6-3c.36721-.17625.60257-.59466.5625-1 .001-.0312.001-.0625 0-.0937-.0597-.31022-.27572-.58621-.5625-.71875l-6-3c-.1822-.0907-.39248-.12385-.59375-.0937z" filter="url(#a)" opacity=".2" />
+                            <path d="m308 911.67377a1.0001 1.0001 0 0 0 -.5625-.71875l-6-3a1.0001 1.0001 0 0 0 -1.375.59375l-.625 1.8125h-10.4375a1.0001 1.0001 0 0 0 -1 1v1a1.0001 1.0001 0 0 0 1 1h10.4375l.625 1.8125a1.0001 1.0001 0 0 0 1.375.59375l6-3a1.0001 1.0001 0 0 0 .5625-1 1.0001 1.0001 0 0 0 0-.0937z" />
+                            <path d="m307 911.86127-6-3-.84375 2.5h-11.15625v1h11.15625l.84375 2.5z" fill="#fefefe" />
+                          </g>
+                        </svg>
+                    </button>
                 </div>           
             </div>
             <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
@@ -132,8 +154,26 @@
                 </li>
             </ul>
         </div>
-        <button>Latest Works</button>
+        <div class=" relative self-center after:left-1/2 after:-transform-x-1/2 after:content-[''] after:absolute after:w-[2px] after:h-5 after:bg-[#444] after:top-[100px]">
+            <button class="bg-[#4595eb] relative py-2 px-5 hover:scale-110 ease-in-out duration-150 rounded font-bold bg-gradient-to-l from-[#1595b6] to-[#1f2667e6] mb-20">Latest Works
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg class="absolute left-1/2 -translate-x-[30px] rotate-90 group-hover:top-12 ease-in-out duration-150 top-10" width="60px" height="55px" viewBox="0 0 24.000001 24.000001" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <filter id="a" color-interpolation-filters="sRGB" height="1.798065" width="1.31919" x="-.159595" y="-.399032">
+                    <feGaussianBlur stdDeviation="1.3302515" />
+                  </filter>
+                  <g transform="matrix(.90944794 0 0 .90944794 -259.0175 -817.2446)">
+                    <path d="m300.84375 908.875c-.35929.0633-.67275.33918-.78125.6875l-.625 1.8125h-10.4375c-.52358.00005-.99995.47642-1 1v1c.00005.52358.47642.99995 1 1h10.4375l.625 1.8125c.17584.53611.8642.83335 1.375.59375l6-3c.36721-.17625.60257-.59466.5625-1 .001-.0312.001-.0625 0-.0937-.0597-.31022-.27572-.58621-.5625-.71875l-6-3c-.1822-.0907-.39248-.12385-.59375-.0937z" filter="url(#a)" opacity=".2" />
+                    <path d="m308 911.67377a1.0001 1.0001 0 0 0 -.5625-.71875l-6-3a1.0001 1.0001 0 0 0 -1.375.59375l-.625 1.8125h-10.4375a1.0001 1.0001 0 0 0 -1 1v1a1.0001 1.0001 0 0 0 1 1h10.4375l.625 1.8125a1.0001 1.0001 0 0 0 1.375.59375l6-3a1.0001 1.0001 0 0 0 .5625-1 1.0001 1.0001 0 0 0 0-.0937z" />
+                    <path d="m307 911.86127-6-3-.84375 2.5h-11.15625v1h11.15625l.84375 2.5z" fill="#fefefe" />
+                  </g>
+                </svg>
+            </button>
+        </div>
     </section>
-</body>
 
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+</body>
 </html>
